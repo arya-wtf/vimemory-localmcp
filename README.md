@@ -15,9 +15,9 @@ Claude Desktop  ──(stdio)──▶  this MCP server  ──(HTTPS + your key
 ### 1. Get the code + dependencies
 
 ```bash
-# clone the project (or copy just the local-mcp/ folder)
-git clone https://github.com/<you>/vimemory.git
-cd vimemory/local-mcp
+# clone the connector
+git clone https://github.com/arya-wtf/vimemory-localmcp.git
+cd vimemory-localmcp
 
 # install (Python 3.10+)
 pip install -r requirements.txt
@@ -38,7 +38,7 @@ Add (or merge) this, filling in the three values:
   "mcpServers": {
     "vimemory": {
       "command": "/full/path/to/python3",
-      "args": ["/full/path/to/vimemory/local-mcp/server.py"],
+      "args": ["/full/path/to/vimemory-localmcp/server.py"],
       "env": {
         "MEMORY_GATEWAY_URL": "https://vimemory.xyz",
         "MEMORY_API_KEY": "msk_your_personal_key"
