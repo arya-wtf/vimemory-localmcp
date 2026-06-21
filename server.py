@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Memory Share — MCP server (stdio).
+"""ViMemory — MCP server (stdio).
 
 A thin pass-through that lets Claude Desktop save/recall memory via the
-Memory Share gateway running on your VPS. All real work (embedding, vector
+ViMemory gateway running on your VPS. All real work (embedding, vector
 search, per-user isolation) happens in the gateway. This process just:
 
   - exposes MCP tools to Claude
@@ -12,7 +12,7 @@ Each teammate runs their own copy with their own API key, so memory stays
 isolated per person.
 
 Config (environment variables):
-  MEMORY_GATEWAY_URL   e.g. https://memory.elux.space   (required)
+  MEMORY_GATEWAY_URL   e.g. https://vimemory.xyz   (required)
   MEMORY_API_KEY       your personal msk_... key          (required)
 
 Run: python server.py   (Claude Desktop launches this for you — see README)
@@ -28,12 +28,12 @@ API_KEY = os.environ.get("MEMORY_API_KEY", "")
 if not GATEWAY_URL or not API_KEY:
     # Fail loudly to stderr so Claude Desktop's MCP log shows the reason.
     print(
-        "[memory-share] Missing config. Set MEMORY_GATEWAY_URL and MEMORY_API_KEY "
+        "[vimemory] Missing config. Set MEMORY_GATEWAY_URL and MEMORY_API_KEY "
         "in your Claude Desktop MCP env.",
         file=sys.stderr,
     )
 
-mcp = FastMCP("memory-share")
+mcp = FastMCP("vimemory")
 
 _HEADERS = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
 _TIMEOUT = 30.0

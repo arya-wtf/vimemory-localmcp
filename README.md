@@ -1,7 +1,7 @@
-# Memory Share — MCP Server (for Claude Desktop)
+# ViMemory — MCP Server (for Claude Desktop)
 
 This lets your team **save and recall memory straight from Claude Desktop**.
-It's a thin local connector: it forwards each call to the Memory Share gateway
+It's a thin local connector: it forwards each call to the ViMemory gateway
 on your VPS using each person's own API key. Memory stays isolated per person.
 
 ```
@@ -16,8 +16,8 @@ Claude Desktop  ──(stdio)──▶  this MCP server  ──(HTTPS + your key
 
 ```bash
 # clone the project (or copy just the local-mcp/ folder)
-git clone https://github.com/<you>/memoryshare.git
-cd memoryshare/local-mcp
+git clone https://github.com/<you>/vimemory.git
+cd vimemory/local-mcp
 
 # install (Python 3.10+)
 pip install -r requirements.txt
@@ -36,11 +36,11 @@ Add (or merge) this, filling in the three values:
 ```json
 {
   "mcpServers": {
-    "memory-share": {
+    "vimemory": {
       "command": "/full/path/to/python3",
-      "args": ["/full/path/to/memoryshare/local-mcp/server.py"],
+      "args": ["/full/path/to/vimemory/local-mcp/server.py"],
       "env": {
-        "MEMORY_GATEWAY_URL": "https://memory.elux.space",
+        "MEMORY_GATEWAY_URL": "https://vimemory.xyz",
         "MEMORY_API_KEY": "msk_your_personal_key"
       }
     }
@@ -55,7 +55,7 @@ Add (or merge) this, filling in the three values:
 
 ### 3. Restart Claude Desktop
 
-You'll see **memory-share** in the tools list (the 🔌 / tools icon).
+You'll see **vimemory** in the tools list (the 🔌 / tools icon).
 
 ---
 

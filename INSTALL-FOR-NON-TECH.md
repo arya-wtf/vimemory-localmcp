@@ -1,4 +1,4 @@
-# Installing Memory Share in Claude Desktop — the easy way
+# Installing ViMemory in Claude Desktop — the easy way
 
 This guide is for **non-technical people**. No coding needed. Just follow each step
 exactly. It takes about 10 minutes the first time.
@@ -9,7 +9,7 @@ and later get it back from any AI model.
 **Before you start, you need two things from your admin (the person who set up the
 server):**
 
-1. The **gateway address** — looks like `https://memory.elux.space`
+1. The **gateway address** — looks like `https://vimemory.xyz`
 2. Your **personal API key** — a long code starting with `msk_`
 
 Keep these two handy. You'll paste them in near the end.
@@ -37,15 +37,15 @@ Python is free software the connector needs to run.
 
 ## Step 2 — Get the connector files
 
-Your admin will give you the project folder (`memoryshare`). Two ways:
+Your admin will give you the project folder (`vimemory`). Two ways:
 
 - **If you got a zip file:** unzip it somewhere easy to find, like your Documents folder.
 - **If your admin uses GitHub:** they'll send a link; click the green **Code → Download ZIP** button, then unzip.
 
 Inside, find the folder named **`local-mcp`**. That's the only part you need.
 Note where it lives, for example:
-- Mac: `/Users/yourname/Documents/memoryshare/local-mcp`
-- Windows: `C:\Users\yourname\Documents\memoryshare\local-mcp`
+- Mac: `/Users/yourname/Documents/vimemory/local-mcp`
+- Windows: `C:\Users\yourname\Documents\vimemory\local-mcp`
 
 ---
 
@@ -89,7 +89,7 @@ You'll need this in the next step.
    ```json
    {
      "mcpServers": {
-       "memory-share": {
+       "vimemory": {
          "command": "PASTE_YOUR_PYTHON_PATH_HERE",
          "args": ["PASTE_PATH_TO_local-mcp/server.py_HERE"],
          "env": {
@@ -103,16 +103,16 @@ You'll need this in the next step.
 
    - `command` → the Python path from Step 4.
    - `args` → the full path to `server.py` inside `local-mcp`
-     (e.g. `/Users/yourname/Documents/memoryshare/local-mcp/server.py`).
+     (e.g. `/Users/yourname/Documents/vimemory/local-mcp/server.py`).
    - `MEMORY_GATEWAY_URL` → the gateway address your admin gave you.
    - `MEMORY_API_KEY` → your personal `msk_` key.
 
    > **Windows paths:** use double backslashes, like
-   > `"C:\\Users\\yourname\\Documents\\memoryshare\\local-mcp\\server.py"`.
+   > `"C:\\Users\\yourname\\Documents\\vimemory\\local-mcp\\server.py"`.
 
 6. Save the file.
 
-> Already have other things in this file? Just add the `"memory-share": { … }`
+> Already have other things in this file? Just add the `"vimemory": { … }`
 > block inside the existing `"mcpServers"` section, separated by a comma.
 
 ---
@@ -121,7 +121,7 @@ You'll need this in the next step.
 
 **Fully quit** Claude Desktop (don't just close the window — quit it completely),
 then open it again. After it loads, look for the tools icon (🔌). You should see
-**memory-share** listed. Done! 🎉
+**vimemory** listed. Done! 🎉
 
 ---
 
@@ -140,7 +140,7 @@ OpenWebUI guide your admin has.
 
 ## If it doesn't show up
 
-- **No "memory-share" in the list:** the config file probably has a typo. Common causes:
+- **No "vimemory" in the list:** the config file probably has a typo. Common causes:
   a missing comma, a single `\` instead of `\\` on Windows, or a wrong path. Re-check Step 5.
 - **It shows but errors when you use it:** your gateway address or API key is wrong.
   Double-check both with your admin.
